@@ -1,0 +1,128 @@
+// Import variables and mixins
+@import 'variables';
+@import 'mixins';
+
+// Import Bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+// Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-base;
+  color: $text-color;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-md;
+}
+
+// Links
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: $transition-base;
+
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}
+
+// Buttons
+.btn-primary {
+  @include primary-button;
+}
+
+.btn-secondary {
+  @include secondary-button;
+}
+
+// Forms
+.form-control {
+  @include input-base;
+  margin-bottom: $spacing-md;
+}
+
+// Cards
+.card {
+  @include card;
+  margin-bottom: $spacing-lg;
+}
+
+// Navigation
+.navbar {
+  background-color: $background-color;
+  box-shadow: $box-shadow;
+  padding: $spacing-md $spacing-lg;
+
+  .navbar-brand {
+    color: $primary-color;
+    font-weight: $font-weight-bold;
+  }
+}
+
+// Utilities
+.text-primary {
+  color: $primary-color !important;
+}
+
+.bg-primary {
+  background-color: $primary-color !important;
+}
+
+// Animation classes
+.fade-in {
+  @include fade-in;
+}
+
+.slide-in {
+  @include slide-in;
+}
+
+// Custom components
+.points-badge {
+  background-color: $primary-color;
+  color: $background-color;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius;
+  font-size: 0.875rem;
+  font-weight: $font-weight-bold;
+}
+
+.event-card {
+  @include card;
+  cursor: pointer;
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-lg;
+  }
+}
+
+// Responsive utilities
+@include mobile {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@include tablet {
+  .hide-tablet {
+    display: none;
+  }
+}
+
+@include desktop {
+  .hide-desktop {
+    display: none;
+  }
+} 

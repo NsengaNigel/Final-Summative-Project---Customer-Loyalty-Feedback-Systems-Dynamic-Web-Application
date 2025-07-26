@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoConnect - Welcome</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .splash-screen {
+            background: linear-gradient(135deg, #00A651 0%, #006633 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .logo-container {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .logo {
+            max-width: 250px;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .button-container {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .geometric-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="splash-screen">
+        <div class="geometric-pattern">
+            <svg width="100%" height="100%" viewBox="0 0 100 100">
+                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 20" stroke="white" stroke-width="1"/>
+                </pattern>
+                <rect width="100%" height="100%" fill="url(#grid)"/>
+            </svg>
+        </div>
+        
+        <div class="logo-container fade-in">
+            <img src="assets/images/logo-white.png" alt="EcoConnect Logo" class="logo">
+            <p class="tagline">Connect. Contribute. Conserve.</p>
+        </div>
+        
+        <div class="button-container slide-in">
+            <a href="pages/login.html" class="btn btn-light">LOG IN</a>
+            <a href="pages/register.html" class="btn btn-outline-light">REGISTER</a>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is already logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            if (sessionStorage.getItem('user')) {
+                window.location.href = 'pages/dashboard.html';
+            }
+        });
+    </script>
+</body>
+</html> 

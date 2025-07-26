@@ -1,0 +1,80 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "lucas_mbugua",
+      "email": "david@gmail.com",
+      "password": "hashed_password",
+      "loyaltyPoints": 1000,
+      "tier": "Gold",
+      "joinDate": "2024-01-15",
+      "profileImage": "assets/images/default-avatar.png"
+    },
+    {
+      "username": "Nigel",
+      "email": "nsenganigel6@gmail.com",
+      "password": "NsengaMa4",
+      "loyaltyPoints": 50,
+      "tier": "Bronze",
+      "joinDate": "2025-07-24",
+      "profileImage": "../assets/images/default-avatar.png",
+      "id": 2
+    }
+  ],
+  "feedback": [
+    {
+      "id": 1,
+      "userId": 1,
+      "productId": "prod_001",
+      "rating": 4,
+      "comment": "Excellent eco-friendly initiative!",
+      "category": "Environmental Impact",
+      "date": "2024-03-15",
+      "status": "reviewed"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "name": "Eco Festival",
+      "date": "2024-09-25",
+      "description": "Annual eco-awareness festival",
+      "points": 100
+    },
+    {
+      "id": 2,
+      "name": "Happy Green Day",
+      "date": "2024-05-15",
+      "description": "Community clean-up event",
+      "points": 50
+    },
+    {
+      "id": 3,
+      "name": "Eco Career Summit",
+      "date": "2024-05-18",
+      "description": "Career networking in sustainability",
+      "points": 75
+    },
+    {
+      "id": 4,
+      "name": "Green Justice",
+      "date": "2024-07-01",
+      "description": "Environmental justice workshop",
+      "points": 60
+    }
+  ],
+  "rewards": [
+    {
+      "id": 1,
+      "name": "Event VIP Access",
+      "pointsCost": 500,
+      "description": "Get VIP access to upcoming eco-events"
+    },
+    {
+      "id": 2,
+      "name": "Eco-friendly Product Bundle",
+      "pointsCost": 1000,
+      "description": "Receive a bundle of sustainable products"
+    }
+  ]
+}

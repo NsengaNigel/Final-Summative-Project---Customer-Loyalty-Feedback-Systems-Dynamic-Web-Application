@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoConnect - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body class="bg-light">
+    <div class="container-fluid p-0">
+        <!-- Top Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-link text-dark d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+                        <i class="bi bi-list fs-4"></i>
+                    </button>
+                    <a class="navbar-brand m-0" href="#">
+                        <img src="../assets/images/logo.png" alt="EcoConnect" height="40">
+                    </a>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="dropdown">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown">
+                            <img src="" alt="Profile" id="userAvatar" class="rounded-circle" width="40" height="40">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="d-flex">
+            <!-- Sidebar -->
+            <div class="offcanvas-lg offcanvas-start bg-white" id="sidebar" style="width: 280px;">
+                <div class="offcanvas-header d-lg-none">
+                    <h5 class="offcanvas-title">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar"></button>
+                </div>
+                <div class="offcanvas-body p-0">
+                    <div class="nav flex-column">
+                        <a href="dashboard.html" class="nav-link active py-3 px-4">
+                            <i class="bi bi-house-door me-2"></i> Home
+                        </a>
+                        <a href="events.html" class="nav-link py-3 px-4">
+                            <i class="bi bi-calendar-event me-2"></i> Events
+                        </a>
+                        <a href="support.html" class="nav-link py-3 px-4">
+                            <i class="bi bi-question-circle me-2"></i> Help & Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="flex-grow-1 p-4">
+                <!-- Welcome Section -->
+                <div class="mb-4">
+                    <h1 class="h3 mb-2">Welcome, <span id="userName">Lucas!</span></h1>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">LATEST NEWS & UPCOMING EVENTS</h5>
+                            <div class="position-relative">
+                                <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <!-- Carousel items will be populated by JavaScript -->
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events Section -->
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="mb-0">Upcoming Events</h5>
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-link p-0 me-3">
+                                <i class="bi bi-search"></i>
+                            </button>
+                            <button class="btn btn-link p-0">
+                                <i class="bi bi-filter"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Calendar -->
+                    <div class="d-flex gap-3 mb-3 event-dates">
+                        <!-- Event dates will be populated by JavaScript -->
+                    </div>
+
+                    <!-- Booking Slots -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-3">Booking slots</h6>
+                            <div class="event-list">
+                                <!-- Event list will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events Gallery -->
+                <div>
+                    <h5 class="mb-3">Events</h5>
+                    <div class="row g-3" id="eventsGallery">
+                        <!-- Events gallery will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html> 

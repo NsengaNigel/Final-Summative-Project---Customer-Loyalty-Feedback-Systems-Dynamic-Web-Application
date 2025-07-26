@@ -1,0 +1,33 @@
+{
+  "name": "ecoconnect",
+  "version": "1.0.0",
+  "description": "Customer Loyalty & Feedback System for EcoConnect",
+  "main": "server.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run sass\" \"npm run web\"",
+    "server": "json-server --watch data/db.json --port 3001",
+    "sass": "sass --watch assets/scss/main.scss assets/css/main.css",
+    "web": "node server.js",
+    "build": "sass assets/scss/main.scss assets/css/main.css --style compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eco",
+    "loyalty",
+    "feedback",
+    "sustainability"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
+    "express": "^4.21.2",
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "json-server": "^0.17.4",
+    "sass": "^1.71.1"
+  }
+}

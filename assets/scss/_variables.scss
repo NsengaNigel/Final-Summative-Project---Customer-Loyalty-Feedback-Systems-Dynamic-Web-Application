@@ -1,0 +1,37 @@
+// Colors
+$primary-color: #00A651;
+$secondary-color: #000000;
+$background-color: #FFFFFF;
+$text-color: #333333;
+$error-color: #dc3545;
+$success-color: #28a745;
+
+// Typography
+$font-family-base: 'Inter', sans-serif;
+$font-size-base: 1rem;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+
+// Border radius
+$border-radius: 8px;
+$border-radius-lg: 12px;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Transitions
+$transition-base: all 0.3s ease-in-out;
+
+// Box shadows
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.1); 
