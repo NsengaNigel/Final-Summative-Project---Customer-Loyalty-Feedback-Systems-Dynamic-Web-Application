@@ -19,6 +19,26 @@
       "joinDate": "2025-07-24",
       "profileImage": "../assets/images/default-avatar.png",
       "id": 2
+    },
+    {
+      "username": "NNigel",
+      "email": "n.nigel@alustudent.com",
+      "password": "MaestroNs7",
+      "loyaltyPoints": 0,
+      "tier": "Bronze",
+      "joinDate": "2025-07-26",
+      "profileImage": "../assets/images/default-avatar.png",
+      "id": 3
+    },
+    {
+      "username": "LecHero",
+      "email": "donlechero@yh.com",
+      "password": "LecHero4",
+      "loyaltyPoints": 0,
+      "tier": "Bronze",
+      "joinDate": "2025-07-26",
+      "profileImage": "../assets/images/default-avatar.png",
+      "id": 4
     }
   ],
   "feedback": [
