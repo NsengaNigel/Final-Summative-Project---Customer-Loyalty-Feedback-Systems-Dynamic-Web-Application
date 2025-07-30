@@ -13,7 +13,7 @@
     {
       "username": "Nigel",
       "email": "nsenganigel6@gmail.com",
-      "password": "NsengaMa4",
+      "password": "Nigel7",
       "loyaltyPoints": 50,
       "tier": "Bronze",
       "joinDate": "2025-07-24",
@@ -39,6 +39,16 @@
       "joinDate": "2025-07-26",
       "profileImage": "../assets/images/default-avatar.png",
       "id": 4
+    },
+    {
+      "username": "Nadal NsJ",
+      "email": "nadalns@email.com",
+      "password": "Nsenga1N",
+      "loyaltyPoints": 0,
+      "tier": "Bronze",
+      "joinDate": "2025-07-30",
+      "profileImage": "../assets/images/default-avatar.png",
+      "id": 5
     }
   ],
   "feedback": [

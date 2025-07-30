@@ -1,11 +1,12 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const semver = require('semver');
 
 function checkNodeVersion() {
     const requiredNode = '14.0.0';
     const currentNode = process.version;
-    if (currentNode.replace('v', '') < requiredNode) {
+    if (!semver.gte(currentNode, requiredNode)) {
         console.error(`Error: Node.js version ${requiredNode} or higher is required. Current version: ${currentNode}`);
         process.exit(1);
     }
@@ -15,7 +16,7 @@ function checkNpmVersion() {
     try {
         const npmVersion = execSync('npm --version').toString().trim();
         const requiredNpm = '6.0.0';
-        if (npmVersion < requiredNpm) {
+        if (!semver.gte(npmVersion, requiredNpm)) {
             console.error(`Error: npm version ${requiredNpm} or higher is required. Current version: ${npmVersion}`);
             process.exit(1);
         }

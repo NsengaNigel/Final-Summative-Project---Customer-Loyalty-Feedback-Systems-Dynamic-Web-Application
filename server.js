@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const findAvailablePort = require('find-port-sync');
+const net = require('net');
 
 // Serve static files
 app.use(express.static(__dirname));
@@ -11,11 +11,46 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Find available port
-const preferredPort = process.env.PORT || 3000;
-const PORT = findAvailablePort(preferredPort, preferredPort + 10);
+// Function to check if a port is available
+function isPortAvailable(port) {
+    return new Promise((resolve) => {
+        const server = net.createServer();
+        server.listen(port, () => {
+            server.close();
+            resolve(true);
+        });
+        server.on('error', () => {
+            resolve(false);
+        });
+    });
+}
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-    console.log(`Open your browser and navigate to http://localhost:${PORT}`);
-}); 
+// Function to find an available port
+async function findAvailablePort(startPort) {
+    let port = startPort;
+    while (port < 65536) {
+        if (await isPortAvailable(port)) {
+            return port;
+        }
+        port++;
+    }
+    throw new Error('No available ports found');
+}
+
+// Start the server
+async function startServer() {
+    try {
+        const preferredPort = parseInt(process.env.PORT) || 3000;
+        const port = await findAvailablePort(preferredPort);
+        
+        app.listen(port, () => {
+            console.log(`Server is running on port ${port}`);
+            console.log(`Open your browser and navigate to http://localhost:${port}`);
+        });
+    } catch (error) {
+        console.error('Failed to start server:', error);
+        process.exit(1);
+    }
+}
+
+startServer(); 
